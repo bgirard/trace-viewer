@@ -160,7 +160,7 @@ this.tv = (function() {
    * Initialization which must be deferred until run-time.
    */
   function initialize() {
-    if (!window._TRACE_VIEWER_IS_COMPILED) {
+    if (!window._TRACE_VIEWER_IS_COMPILED && window.navigator.appVersion.indexOf("Chrome") != -1) {
       var ver = parseInt(
           window.navigator.appVersion.match(/Chrome\/(\d+)\./)[1], 10);
       if (ver < 36) {
